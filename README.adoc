@@ -1,10 +1,16 @@
 // Settings:
 :!toc-title:
 // URLs:
+:url-actionlint: https://rhysd.github.io/actionlint/
+:url-conform: https://github.com/siderolabs/conform
 :url-cv: http://cv.rabkin.co.il/
 :url-license: https://github.com/rdavid/rdavid.github.io/blob/master/LICENSES/0BSD.txt
 :url-pages: https://rdavid.github.io/
+:url-reuse: https://reuse.software/
+:url-typos: https://github.com/crate-ci/typos
+:url-yamllint: https://yamllint.readthedocs.io/
 :url-zenburn: https://github.com/jnurmine/Zenburn
+:url-zizmor: https://docs.zizmor.sh/
 
 = Projects
 
@@ -42,6 +48,16 @@ python3 -m http.server 8000
 Copy an existing `<li>` in `index.html` and set the link, the logo, the name,
 and the description.
 Place the card by commit count.
+
+== Lint
+
+GitHub Actions run
+{url-actionlint}[`actionlint`],
+{url-conform}[`conform`],
+{url-reuse}[`reuse`],
+{url-typos}[`typos`],
+{url-yamllint}[`yamllint`], and
+{url-zizmor}[`zizmor`].
 
 == License
 
