@@ -1,0 +1,240 @@
+/* Zenburn palette. */
+:root {
+  --bg: #3f3f3f;
+  --bg-dim: #333333;
+  --bg-hi: #4f4f4f;
+  --fg: #dcdccc;
+  --dim: #7f9f7f;
+  --red: #cc9393;
+  --orange: #dfaf8f;
+  --yellow: #f0dfaf;
+  --cyan: #8cd0d3;
+  --width: 56.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono",
+    monospace;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  margin: 0 auto;
+  max-width: var(--width);
+  padding: 5.5rem 1rem 2rem;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--cyan);
+}
+
+::selection {
+  background: var(--bg-hi);
+  color: var(--yellow);
+}
+
+nav {
+  align-items: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--bg-hi);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+  left: 0;
+  margin: 0 auto;
+  max-width: var(--width);
+  padding: 0.9rem 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+nav .brand {
+  align-items: center;
+  color: var(--yellow);
+  display: flex;
+  font-weight: 700;
+  gap: 0.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul a {
+  color: var(--fg);
+}
+
+nav ul a:hover,
+nav .repo:hover {
+  color: var(--orange);
+}
+
+nav .repo {
+  color: var(--dim);
+  display: flex;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: var(--yellow);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1::before {
+  color: var(--dim);
+  content: "$ ";
+}
+
+header p {
+  color: var(--dim);
+  margin: 0.25rem 0 0;
+}
+
+h2 {
+  border-bottom: 1px solid var(--bg-hi);
+  color: var(--yellow);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.4rem;
+}
+
+h2::before {
+  color: var(--dim);
+  content: "# ";
+}
+
+main ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main li {
+  display: flex;
+}
+
+.card {
+  background: var(--bg-dim);
+  border: 1px solid var(--bg-hi);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.1rem 1.25rem 1.5rem;
+  position: relative;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.card:hover,
+.card:focus-visible {
+  background: var(--bg-hi);
+  border-color: var(--orange);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: var(--fg);
+  transform: translateY(-3px);
+}
+
+.card::after {
+  bottom: 0.4rem;
+  color: var(--orange);
+  content: "\2192";
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.2s ease;
+}
+
+.card:hover::after,
+.card:focus-visible::after {
+  opacity: 0.8;
+}
+
+.card img {
+  align-self: center;
+  height: 48px;
+  margin-bottom: 0.4rem;
+  width: 48px;
+}
+
+.card b {
+  color: var(--yellow);
+  font-size: 1.05rem;
+}
+
+.card span {
+  color: var(--dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+footer {
+  align-items: center;
+  border-top: 1px solid var(--bg-hi);
+  color: var(--dim);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+}
+
+footer div {
+  align-items: center;
+  display: flex;
+  gap: 0.6rem 1.4rem;
+}
+
+footer div:last-child a {
+  color: var(--dim);
+}
+
+footer div:last-child a:hover {
+  color: var(--orange);
+}
+
+.err {
+  color: var(--red);
+}
+
+@media (max-width: 35rem) {
+  html {
+    font-size: 15px;
+  }
+}
