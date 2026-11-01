@@ -8,6 +8,7 @@
 :url-cv: http://cv.rabkin.co.il/
 :url-hoc: https://hitsofcode.com/view/github/rdavid/rdavid.github.io?branch=master
 :url-license: https://github.com/rdavid/rdavid.github.io/blob/master/LICENSES/0BSD.txt
+:url-lychee: https://lychee.cli.rs/
 :url-pages: https://rdavid.github.io/
 :url-reuse: https://reuse.software/
 :url-typos: https://github.com/crate-ci/typos
@@ -65,6 +66,7 @@ Place the card by commit count.
 GitHub Actions run
 {url-actionlint}[`actionlint`],
 {url-conform}[`conform`],
+{url-lychee}[`lychee`],
 {url-reuse}[`reuse`],
 {url-typos}[`typos`],
 {url-yamllint}[`yamllint`], and

@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
+# Checks every link on the site, including project pages and logos. The weekly
+# schedule reports a dead project link even when the repository is quiet. The
+# root directory resolves site-absolute paths such as /favicon.svg.
+---
+name: lychee
+'on':
+  pull_request:
+  push:
+    branches: [master]
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
+jobs:
+  lychee:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >
+            --max-retries 3
+            --no-progress
+            --root-dir "${{ github.workspace }}"
+            index.html
+            404.html
+          fail: true
