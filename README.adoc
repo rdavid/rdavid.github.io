@@ -1,4 +1,5 @@
 // Settings:
+:toc: macro
 :!toc-title:
 // URLs:
 :img-hoc: https://hitsofcode.com/github/rdavid/rdavid.github.io?branch=master&label=hits%20of%20code
@@ -26,40 +27,16 @@
 </div>
 ++++
 
+toc::[]
+
 == About
 
-The {url-pages}[website] is a minimal portfolio of open source projects by
+The {url-pages}[website] showcases the open source projects of
 {url-cv}[David Rabkin].
-It presents each project as a card with its logo, name, and description.
-The cards link to the project's GitHub Pages site and appear in order of
-commit count.
-The design follows the {url-zenburn}[Zenburn] color scheme.
-
-== Structure
-
-The site is plain HTML and CSS with no build step and no JavaScript.
-
-- `index.html`: the project cards, the header, and the footer.
-- `404.html`: the page for missing paths.
-- `style.css`: the Zenburn theme.
-- `favicon.svg`: the site icon.
-
-Each card loads the logo from `favicon.svg` on the project's own site.
-
-== Preview
-
-Serve the directory and open `http://localhost:8000/`:
-
-[,sh]
-----
-python3 -m http.server 8000
-----
-
-== Add a project
-
-Copy an existing `<li>` in `index.html` and set the link, the logo, the name,
-and the description.
-Place the card by commit count.
+Each project appears as a card with its logo, name, and short description.
+A card opens the project's GitHub Pages site.
+The site is plain HTML and CSS, with no build step and no JavaScript.
+Its colors come from the {url-zenburn}[Zenburn] scheme.
 
 == Lint
 
